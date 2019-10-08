@@ -1,0 +1,7 @@
+services:
+    Ewll\LogExtraDataBundle\LogExtraDataKeeper: []
+
+    Ewll\LogExtraDataBundle\GlobalLogProcessor:
+        autowire: true
+        arguments: ['@Ewll\LogExtraDataBundle\LogExtraDataKeeper']
+        tags: [{ name: monolog.processor, method: processRecord }]
